@@ -1,2 +1,2 @@
 # pathWAS
-Building mechanistic pathways and gene networks from GWAS summary statistics
+Building disease maps from GWAS summary statistics
