@@ -1,0 +1,100 @@
+Welcome to MAGMA v1.07b (linux)
+Using flags:
+	--bfile ./magma/res/g1000_eur/g1000_eur
+	--pval data/GWAS_data/EFO_0000270/EFO_0000270_GWAS_summary_grch37_forMAGMA.tsv ncol=NOBS
+	--gene-annot results/EFO_0000270.genes.annot
+	--out results/EFO_0000270
+
+Start time is 18:53:54, Tuesday 09 Jun 2020
+
+Loading PLINK-format data...
+Reading file ./magma/res/g1000_eur/g1000_eur.fam... 503 individuals read
+Reading file ./magma/res/g1000_eur/g1000_eur.bim... 22665064 SNPs read
+Preparing file ./magma/res/g1000_eur/g1000_eur.bed... 
+
+Reading SNP synonyms from file ./magma/res/g1000_eur/g1000_eur.synonyms (auto-detected)
+	read 6016767 mapped synonyms from file, mapping to 3921040 SNPs in the data
+	WARNING: detected 133 synonymous SNP pairs in the data
+	         skipped all synonym entries involved, synonymous SNPs are kept in analysis
+	         writing list of detected synonyms in data to supplementary log file
+Reading SNP p-values from file data/GWAS_data/EFO_0000270/EFO_0000270_GWAS_summary_grch37_forMAGMA.tsv... 
+	detected 5 variables in file
+	using variable: SNP (SNP id)
+	using variable: P (p-value)
+	using variable: NOBS (sample size; discarding SNPs with N < 50)
+	read 2373 lines from file, containing valid SNP p-values for 1453 SNPs in data (61.23% of lines, 0.006411% of SNPs in data)
+	WARNING: file contained 387 SNPs (same IDs or synonyms) with duplications
+	         dropped all occurrences of each from analysis
+	         writing list of duplicated IDs to supplementary log file
+Filtering phenotype/covariate missing values... 503 individuals remaining
+Loading gene annotation from file results/EFO_0000270.genes.annot... 
+	440 gene definitions read from file
+	found 415 genes containing valid SNPs in genotype data
+
+
+Starting gene analysis... 
+	using model: SNPwise-mean
+	WARNING: analysis failed for gene 80176; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 374977; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 7813; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 6097; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 7292; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 55289; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 2720; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 643853; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 9223; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 54491; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 3575; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 2241; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 25816; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 3596; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 645121; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 23176; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 3662; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 7726; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 170679; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 1041; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 4795; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 7918; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 80737; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 56244; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 6891; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 5325; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 92714; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 5588; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 22891; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 221037; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 2894; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 4586; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 10335; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 745; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 57410; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 5017; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 89; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 23235; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 51564; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 9840; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 5869; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 2065; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 4035; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 7103; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 4939; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 161829; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 3706; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 57188; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 64127; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 30009; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 201294; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 5932; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 8710; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 93323; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 3171; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 140733; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 861; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 84844; gene contains no valid SNPs after internal QC
+	WARNING: analysis failed for gene 89801; gene contains no valid SNPs after internal QC
+	writing gene analysis results to file results/EFO_0000270.genes.out
+	writing intermediate output to file results/EFO_0000270.genes.raw
+
+
+End time is 18:54:40, Tuesday 09 Jun 2020 (elapsed: 00:00:46)

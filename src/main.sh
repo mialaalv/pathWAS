@@ -1,16 +1,45 @@
-bash ./src/downloads.sh
-# after download of all needed files (including MAGMA software from https://ctg.cncr.nl/software/magma)
-Rscript ./src/gwas_data_preprocessing.R
-# MAGMA analysis
+#!/bin/bash
+
+mkdir -p logs # create folder to store logs from executions
+mkdir -p results # create folder to store result files
+
+### Set up
+echo MAGMA installation and download of resources
+# Install MAGMA software from https://ctg.cncr.nl/software/magma
+bash ./src/magma_setup.sh &> logs/magma_setup.log
+echo DONE
+
+echo Installation of R dependencies
+# Install R dependencies
+Rscript ./src/R_dependencies.R &> logs/R_dependencies.log
+echo DONE
+
+echo Fetching GWAS Catalog data
+# fetch data from GWAS Catalog usin gwasrapidd bioconductor package. Lifts GRCh38 SNP locations to GRCh37 build.
+Rscript ./src/gwas_data_fetching_with_R.R &> logs/gwas_data_fetching_with_R.log
+echo DONE
+
+
+### MAGMA analysis
+echo MAGMA Analysis
+echo SNPs annotation
 # SNPs annotation
-./magma/magma_v1.07bb/magma --annotate --snp-loc data/prueba.txt --gene-loc magma/NCBI38/NCBI38.gene.loc --out results/prueba_1
+./magma/magma --annotate --snp-loc data/GWAS_data/EFO_0000270/EFO_0000270_GWAS_summary_grch37_forMAGMA.tsv --gene-loc magma/res/NCBI37.3/NCBI37.3.gene.loc --out results/EFO_0000270
+# make sure the SNP file and gene location file are in the same genome build
+echo DONE
 
+echo Gene analysis
 # Gene analysis from SNP p-values
-./magma/magma_v1.07bb/magma --bfile ./magma/g1000_eur/g1000_eur --pval ./data/prueba.txt ncol=NOBS --gene-annot results/prueba_1.genes.annot --out results/prueba_1
+./magma/magma --bfile ./magma/res/g1000_eur/g1000_eur --pval data/GWAS_data/EFO_0000270/EFO_0000270_GWAS_summary_grch37_forMAGMA.tsv ncol=NOBS --gene-annot results/EFO_0000270.genes.annot --out results/EFO_0000270
+# make sure the reference panel is in the same genome build as the SNP pval data
+# NOBS is the initial sample size of the study the data were retrieved from
+# *.genes.annot is the output from the annotation step.
+echo DONE
 
-# Gene set analysis:
-./magma/magma_v1.07bb/magma --gene-results results/prueba_1.genes.raw --set-annot [file with annotation sets, could they be individual?] self-contained  --out results/prueba_fin
+echo P-val adjusting
+# Adjusting pvalues for MAGMA output:
+Rscript ./src/adjust_output_pvals.R &> logs/adjust_output_pvals.log
+echo DONE
 
 
-# needs fixing the reference genome data
-# needs an annotation set file (try to make it one for each individual gene? check if it makes sense)
+
