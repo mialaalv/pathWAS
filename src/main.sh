@@ -37,9 +37,12 @@ echo Gene analysis
 echo DONE
 
 echo P-val adjusting
-# Adjusting pvalues for MAGMA output:
+# Adjusting pvalues for MAGMA output and filtering out the worst associations:
 Rscript ./src/adjust_output_pvals.R &> logs/adjust_output_pvals.log
 echo DONE
 
+echo EnrichmentMap preparation
+Rscript ./src/prep_enrichmentmap.R &> logs/prep_enrichmentmap.log
+echo DONE
 
 
