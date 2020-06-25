@@ -15,7 +15,7 @@ write.table(x = res, quote = F, file = out_file, sep="\t", row.names = F)
 png("results/analisis_genes_cutoff.png")
 plot(res$P_adjust, res$ZSTAT, xlab = "p-valor ajustado", ylab = "Z stat", main = "Análisis de genes con MAGMA")
 cut0 <- mean(res$ZSTAT) - 0.9*sd(res$ZSTAT)
-abline(h =  cut)
+abline(h =  cut0)
 dev.off()
 
 res_filtered <- res[res$P_adjust<0.05,] # filter by adjusted p-value, consider valid only those <0.05

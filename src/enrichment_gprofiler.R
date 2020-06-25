@@ -33,7 +33,7 @@ ggsave(plot = p, filename = fig1_file, device = "jpeg")
 
 
 # keep only the annotations to pathways that are not too big or too small
-ind_size <- gprofres$result$term_size >= 3 & gprofres$result$term_size <= 350
+ind_size <- gprofres$result$term_size >= 5 & gprofres$result$term_size <= 350
 print(paste0("Dropped ", sum(!ind_size), " items. Kept annotations to pathways with sizes 3-350 items."))
 gprofres2 <- gprofres$result[which(ind_size),]
 
