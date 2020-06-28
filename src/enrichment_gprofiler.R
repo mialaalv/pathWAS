@@ -1,3 +1,5 @@
+#!/usr/local/bin/Rscript
+
 library(gprofiler2)
 library(ggplot2)
 library(stringr)
