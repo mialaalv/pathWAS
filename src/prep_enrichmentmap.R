@@ -1,3 +1,4 @@
+#!/usr/local/bin/Rscript
 # download UP-TO-DATE gmt gene sets file from baderLab's repo
 
 library(limma)
