@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # MAGMA v1.07bb installation and fetching of necessary resources
 
 mkdir -p magma/res
