@@ -1,3 +1,5 @@
+#!/usr/local/bin/Rscript
+
 # get stats
 
 efo <- "EFO_0000270"
